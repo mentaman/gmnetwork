@@ -1,0 +1,6 @@
+steps:
+- name: gcr.io/cloud-builders/docker
+  args: [ build, -f, Dockerfile, -t, gcr.io/gmnetwork/node-project3, . ]
+
+images:
+- gcr.io/gmnetwork/node-project3

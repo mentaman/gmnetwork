@@ -31,7 +31,6 @@ export class Server {
                 if(connectdata[0] !== CONNECTED_MESSAGE) {
                     return false;
                 }
-
                 let buff = new SmartBuffer();
                 buff.writeUInt8(CONNECTED_MESSAGE);
                 socket.write(buff.toBuffer());
