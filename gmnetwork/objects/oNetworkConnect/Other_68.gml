@@ -1,8 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-show_debug_message("recieved network event");
-show_debug_message(json_encode(async_load));
-
 switch(async_load[?"type"])
 {
 	case network_type_non_blocking_connect:

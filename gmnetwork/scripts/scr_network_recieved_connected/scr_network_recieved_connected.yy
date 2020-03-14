@@ -1,8 +1,8 @@
 {
-    "id": "3476956f-c3dc-47c2-9f19-100ff867b8cb",
+    "id": "d24d219a-d018-4024-8451-0b264fbcc72f",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_network_send_message",
+    "name": "scr_network_recieved_connected",
     "IsCompatibility": false,
     "IsDnD": false
 }

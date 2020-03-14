@@ -4,8 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "ts-node index.ts"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "smart-buffer": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.9.1",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.3"
+  }
 }

@@ -1,23 +1,14 @@
 {
-    "id": "37921ab5-531e-4efe-873c-ee14ac2fb026",
+    "id": "bbf0de90-637c-41a3-abc7-b04b3b13d405",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "oNetworkConnect",
+    "name": "oNetworkSocketBase",
     "eventList": [
-        {
-            "id": "adfd68cf-98ed-46be-8bad-831726666f7a",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 68,
-            "eventtype": 7,
-            "m_owner": "37921ab5-531e-4efe-873c-ee14ac2fb026"
-        }
+        
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "bbf0de90-637c-41a3-abc7-b04b3b13d405",
+    "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": true,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
