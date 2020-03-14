@@ -4,17 +4,18 @@ import { Room } from './Room';
 import { SmartBuffer } from 'smart-buffer';
 import { MyGameUser } from './MyGameUser';
 import { User } from './User';
+import { RoomFinder } from './RoomFinder';
 
 export class Server {
     port: number;
     id: number;
-    room: Room;
-    userCreator: (id: number, socket: net.Socket, room: Room) => User;
+    userCreator: (id: number, socket: net.Socket, roomFinder: RoomFinder) => User;
+    roomFinder: RoomFinder;
 
-    constructor(port: number, roomCreator: () => Room, userCreator: (id: number, socket: net.Socket, room: Room) => User) {
+    constructor(port: number, roomFinder: RoomFinder, userCreator: (id: number, socket: net.Socket, roomFinder: RoomFinder) => User) {
         this.id = 0;
         this.port = port;
-        this.room = roomCreator();
+        this.roomFinder = roomFinder;
         this.userCreator = userCreator;
     }
     start() {
@@ -26,7 +27,8 @@ export class Server {
             throw err;
         });
         server.on('connection', (socket) => {
-            let user = this.userCreator(this.id++, socket, this.room);
+            let userId = this.id++;
+            let user = this.userCreator(userId, socket, this.roomFinder);
             console.log("a user connected");
             
             socket.on('data', (data) => {

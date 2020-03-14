@@ -1,17 +1,36 @@
 import * as net from "net";
 import { SmartBuffer } from "smart-buffer";
 import { Room } from "./Room";
+import { RoomFinder } from './RoomFinder';
 export class User {
     id: number;
     socket: net.Socket;
     room: Room;
-    constructor(id: number, socket: net.Socket, room: Room) {
+    constructor(id: number, socket: net.Socket, roomFinder: RoomFinder) {
         this.id = id;
         this.socket = socket;
-        this.room = room;
-        room.addUser(this);
-
         this.onConnected();
+        this.setRoom(roomFinder.find({}));
+    }
+
+    onRoomJoined(room: Room) {}
+    onRoomLeaving(room: Room) {}
+    onRoomLeft(room: Room) {}
+
+    leaveRoom() {
+        if(this.room != undefined) {
+            let room = this.room;
+            this.onRoomLeaving(room);
+            this.room = undefined;
+            room.removeUser(this);
+            this.onRoomLeft(room)
+        }
+    }
+    setRoom(room: Room) {
+        this.leaveRoom();
+        this.room = room;
+        this.room.addUser(this);
+        this.onRoomJoined(room);
     }
     
     onConnected() {}
@@ -33,7 +52,7 @@ export class User {
 
     _closed() {
         this.onClosed();
-        this.room.removeUser(this);
+        this.leaveRoom();
     }
 
     onClosed() {}
