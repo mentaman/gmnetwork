@@ -1,4 +1,4 @@
-///@param buffer
+///@param socket
 ///@param message
 var buffer = buffer_create(1, buffer_grow, 1);
 	//type

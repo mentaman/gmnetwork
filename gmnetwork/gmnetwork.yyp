@@ -111,6 +111,14 @@
             }
         },
         {
+            "Key": "3fe74b6a-d783-4792-b01f-021c7b14d7ab",
+            "Value": {
+                "id": "5523c15e-7a16-4801-bc4d-fc95018c8afe",
+                "resourcePath": "scripts\\scr_network_send_clicked_screen\\scr_network_send_clicked_screen.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "425cab2f-f4ee-415b-b60a-fd2b38a476a3",
             "Value": {
                 "id": "dd017da7-4255-404c-9644-037766c08b5e",
@@ -183,6 +191,14 @@
             }
         },
         {
+            "Key": "79782e02-956b-4f0a-81ee-c2d32da8c0ce",
+            "Value": {
+                "id": "11ac64bc-0c2a-4897-b5ac-8c7fdc4e4b3f",
+                "resourcePath": "scripts\\scr_network_recieved_someone_clicked\\scr_network_recieved_someone_clicked.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "79d97afa-9c15-4e8e-b29d-9bcafaee8158",
             "Value": {
                 "id": "86cee1ea-578a-44b8-a7fb-bfa45a4065c6",
@@ -220,6 +236,14 @@
                 "id": "5071fc9d-6717-4dd3-b09f-a4aa10cc3e50",
                 "resourcePath": "options\\ios\\options_ios.yy",
                 "resourceType": "GMiOSOptions"
+            }
+        },
+        {
+            "Key": "88f663aa-9c99-48a6-94eb-fd49452009c2",
+            "Value": {
+                "id": "afca15c3-51c6-43e7-9df9-62ec7425bd25",
+                "resourcePath": "objects\\oClick\\oClick.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -417,8 +441,10 @@
         "711daea9-c310-4334-8cf4-abdbe427fd01",
         "df45adea-69b5-4391-a480-4b4ce55be58e",
         "3476956f-c3dc-47c2-9f19-100ff867b8cb",
+        "3fe74b6a-d783-4792-b01f-021c7b14d7ab",
         "d24d219a-d018-4024-8451-0b264fbcc72f",
-        "4e94cc34-cfdc-4015-a3c5-5fbc0f8679e0"
+        "4e94cc34-cfdc-4015-a3c5-5fbc0f8679e0",
+        "79782e02-956b-4f0a-81ee-c2d32da8c0ce"
     ],
     "tutorial": ""
 }
