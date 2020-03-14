@@ -1,7 +1,7 @@
 import { SmartBuffer } from "smart-buffer";
-import { User } from "./User";
+import { User } from "./Core/User";
 import { ToUserMessages, FromUserMessages } from './Messages';
-import { Room } from './Room';
+import { Room } from './Core/Room';
 export class MyGameUser extends User {
     interval: NodeJS.Timeout;
     onRoomJoined(room: Room) {

@@ -1,5 +1,4 @@
-import { Room } from './Room';
-import { MyGameUser } from './MyGameUser';
+import { Room } from './Core/Room';
 
 export class MyGameRoom extends Room {
     onUserAdded() {
