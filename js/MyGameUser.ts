@@ -4,6 +4,10 @@ import { ToUserMessages, FromUserMessages } from './Messages';
 import { Room } from './Core/Room';
 export class MyGameUser extends User {
     interval: NodeJS.Timeout;
+    onConnected() {
+        this.setRoom(this.roomFinder.find({}));
+    }
+
     onRoomJoined(room: Room) {
         let message = new SmartBuffer();
         message.writeUInt8(ToUserMessages.network_rec_connected);
