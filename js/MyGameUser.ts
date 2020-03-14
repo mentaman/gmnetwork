@@ -10,7 +10,7 @@ export class MyGameUser extends User {
 
     onRoomJoined(room: Room) {
         let message = new SmartBuffer();
-        message.writeUInt8(ToUserMessages.network_rec_connected);
+        message.writeUInt8(ToUserMessages.network_rec_connected_room);
         message.writeString(`welcome to the room! ${room.roomIdx}`);
         this.sendMessageToUser(message.toBuffer());
         /*this.interval = setInterval(() => {
