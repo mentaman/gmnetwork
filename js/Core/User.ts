@@ -10,6 +10,7 @@ export class User {
     constructor(id: number, socket: net.Socket, roomFinder: RoomFinder) {
         this.id = id;
         this.socket = socket;
+        this.roomFinder = roomFinder;
         this.onConnected();
     }
 
@@ -26,7 +27,7 @@ export class User {
             this.onRoomLeft(room)
         }
     }
-    
+
     setRoom(room: Room) {
         this.leaveRoom();
         this.room = room;
