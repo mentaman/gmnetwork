@@ -27,10 +27,14 @@ export class Server {
             throw err;
         });
         server.on('connection', (socket) => {
+            socket.on('timeout', () => {
+                console.log("socket timeout!");
+            })
             socket.on('data', (connectdata) => {
                 if(connectdata[0] !== CONNECTED_MESSAGE) {
                     return false;
                 }
+                socket.setTimeout(0);
                 let buff = new SmartBuffer();
                 buff.writeUInt8(CONNECTED_MESSAGE);
                 socket.write(buff.toBuffer());
@@ -38,7 +42,7 @@ export class Server {
                 let userId = this.id++;
                 let user = this.userCreator(userId, socket);
                 console.log("a user connected");
-                
+                socket.setKeepAlive(true, 0);
                 socket.removeAllListeners('data');
 
                 socket.on('data', (data) => {
@@ -51,8 +55,8 @@ export class Server {
                     console.log('socket end');
                     user._closed();
                 });
-                socket.on('close', () => {
-                    console.log('socket close');
+                socket.on('close', (had_error) => {
+                    console.log('socket close. error: ', had_error);
                     user._closed();
                 });
                 socket.on('error', (e) => {
